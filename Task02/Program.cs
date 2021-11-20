@@ -31,6 +31,7 @@ namespace Task02
             int xC = int.Parse(Console.ReadLine());
             int yC = int.Parse(Console.ReadLine());
 
+            //Комментарий преподавателя: "расстояние лучше считать по модулю, т.к. мы не знаем, как точки будут расположены друг относительно друга"
             int AB = yC - yA;
             int AD = xC - xA;
 
