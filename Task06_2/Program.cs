@@ -23,12 +23,12 @@ namespace Task06_2
             {
                 strReverced += item;
             }
-                        
+
             if (strNoSpaceLower == strReverced)
-                Console.WriteLine("Введенное вами предложение является палиндромом");            
+                Console.WriteLine("Введенное вами предложение является палиндромом");
             else
                 Console.WriteLine("Введенное вами предложение не является палиндромом");
-                        
+
             Console.ReadKey();
 
         }
