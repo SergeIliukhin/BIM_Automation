@@ -111,7 +111,7 @@ namespace Task09
                 default:
                     break;
             }
-
+            Console.ReadKey();
         }
     }
 }
