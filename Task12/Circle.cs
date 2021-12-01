@@ -22,7 +22,7 @@ namespace Task12
         {
             circleRadius = radius;
             double circleSquare = Math.Round((Math.PI * Math.Pow(circleRadius, 2)), 2, MidpointRounding.AwayFromZero);
-            Console.WriteLine($"При заданном радиусе площадь окружности составляет {circleSquare}");
+            Console.WriteLine($"При заданном радиусе площадь круга составляет {circleSquare}");
         }
         public static void PointBelong(double userX, double userY)
         {
