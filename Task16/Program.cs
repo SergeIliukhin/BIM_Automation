@@ -44,10 +44,10 @@ namespace Task16
 
             string path = @"G:\BIM_Automation\Products.json";
 
-            /*
+            
             if (!File.Exists(path))
-                File.Create(path);
-            */
+                File.Create(path).Close();
+            
 
             for (int i = 0; i < allProductsArray.Length; i++)
             {
