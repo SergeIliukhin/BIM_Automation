@@ -5,14 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_02_WPF_Task03"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="OpenExecuted"/>
+        <CommandBinding Command="Save" Executed="SaveExecuted"/>
+        <CommandBinding Command="Close" Executed="CloseExecuted"/>
+    </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top" VerticalContentAlignment="Top">
             <MenuItem Header="_Файл">
-                <MenuItem Header="_Открыть" Click="MenuItem_Click"/>
-                <MenuItem Header="_Сохранить" Click="MenuItem_Click_1"/>
+                <MenuItem Header="_Открыть" Command="Open"/>
+                <MenuItem Header="_Сохранить" Command="Save"/>
                 <Separator/>
-                <MenuItem Header="_Выход" Click="MenuItem_Click_2"/>
+                <MenuItem Header="_Выход" Command="Close"/>
+            </MenuItem>
+            <MenuItem Header="_Правка">
+                <MenuItem Header="_Вырезать" Command="Cut" CommandTarget="{Binding ElementName=textBox}"/>
+                <MenuItem Header="_Копировать" Command="Copy" CommandTarget="{Binding ElementName=textBox}"/>
+                <MenuItem Header="_Вставить" Command="Paste" CommandTarget="{Binding ElementName=textBox}"/>
             </MenuItem>
         </Menu>
         <Grid DockPanel.Dock="Bottom">

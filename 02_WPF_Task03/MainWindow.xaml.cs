@@ -26,6 +26,19 @@ namespace _02_WPF_Task03
         {
             InitializeComponent();
         }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult resultExit = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButton.YesNo);
+            switch (resultExit)
+            {
+                case MessageBoxResult.Yes:
+                    Application.Current.Shutdown();
+                    break;
+                case MessageBoxResult.No:
+                    e.Cancel = true;
+                    break;
+            }
+        }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -100,6 +113,7 @@ namespace _02_WPF_Task03
             }            
         }
 
+        /* Вариант кода с обработчиками событий
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -109,8 +123,40 @@ namespace _02_WPF_Task03
                 textBox.Text = File.ReadAllText(openFileDialog.FileName);
             }
         }
-
+                
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Тектовые файлы (*.txt)|*.txt|Все файлы(*.*)|*.*";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                File.WriteAllText(saveFileDialog.FileName, textBox.Text);
+            }
+        }        
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    Application.Current.Shutdown();
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
+        }
+        */
+        private void OpenExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Тектовые файлы (*.txt)|*.txt|Все файлы(*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                textBox.Text = File.ReadAllText(openFileDialog.FileName);
+            }
+        }
+        private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Тектовые файлы (*.txt)|*.txt|Все файлы(*.*)|*.*";
@@ -120,10 +166,10 @@ namespace _02_WPF_Task03
             }
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void CloseExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButton.YesNo);
-            switch (result)
+            MessageBoxResult resultExit = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButton.YesNo);
+            switch (resultExit)
             {
                 case MessageBoxResult.Yes:
                     Application.Current.Shutdown();
