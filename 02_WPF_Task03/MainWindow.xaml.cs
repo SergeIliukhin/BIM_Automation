@@ -42,19 +42,17 @@ namespace _02_WPF_Task03
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string fontName = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            string fontName = ((sender as ComboBox).SelectedItem as string).ToString();
             if (textBox != null)
             {
                 textBox.FontFamily = new FontFamily(fontName);
             }
-            
+
         }
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            string fontSize = ((sender as ComboBox).SelectedItem as TextBlock).Text;
-            
-
+            string fontSize = ((sender as ComboBox).SelectedItem as string).ToString();
             if (textBox != null)
             {
                 textBox.FontSize = double.Parse(fontSize);
@@ -110,10 +108,32 @@ namespace _02_WPF_Task03
             if (textBox != null)
             {
                 textBox.Foreground = Brushes.Red;
-            }            
+            }
         }
 
         /* Вариант кода с обработчиками событий
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string fontName = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            if (textBox != null)
+            {
+                textBox.FontFamily = new FontFamily(fontName);
+            }
+            
+        }
+
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            string fontSize = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+
+
+            if (textBox != null)
+            {
+                textBox.FontSize = double.Parse(fontSize);
+            }
+        }
+
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
