@@ -22,10 +22,31 @@ namespace _02_WPF_Task03
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool lightTheme;
         public MainWindow()
         {
             InitializeComponent();
+            List<string> styles = new List<string>() { "Светлая тема", "Тёмная тема" };
+            styleBox.ItemsSource = styles;
+            styleBox.SelectionChanged += ThemeChange;
+            styleBox.SelectedIndex = 0;
         }
+
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            lightTheme = true;
+            int styleIndex = styleBox.SelectedIndex;
+            Uri uri = new Uri("LightTheme.xaml", UriKind.Relative);
+            if (styleIndex == 1)
+            {
+                lightTheme = false;
+                uri = new Uri("DarkTheme.xaml", UriKind.Relative);
+            }
+            ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resource);
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBoxResult resultExit = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButton.YesNo);
@@ -97,9 +118,13 @@ namespace _02_WPF_Task03
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            if (textBox != null)
+            if (textBox != null && lightTheme == true)
             {
                 textBox.Foreground = Brushes.Black;
+            }
+            else if (textBox != null && lightTheme == false)
+            {
+                textBox.Foreground = Brushes.White;
             }
         }
 
