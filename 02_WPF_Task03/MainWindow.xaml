@@ -32,8 +32,20 @@
             </Grid.RowDefinitions>
             <ToolBarTray Grid.Row="0" Style="{DynamicResource ToolBarTrayStyle}">
                 <ToolBar Style="{DynamicResource ToolBarStyle}" Margin="0,0,-13,0">
+                    <!--Формирование ComboBox через словарь ресурсов. Замена шрифта и размера через события
                     <ComboBox Style="{DynamicResource ComboBoxStyle}" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{StaticResource fontName}"/>
                     <ComboBox Style="{DynamicResource ComboBoxStyle}" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1" ItemsSource="{StaticResource fontSize}"/>
+                    -->
+                    <ComboBox x:Name="fontTypeSelection" Style="{DynamicResource ComboBoxStyle}" SelectedIndex="0" Width="200">
+                        <TextBlock Tag="Arial">Arial</TextBlock>
+                        <TextBlock Tag="TimesNewRoman">TimesNewRoman</TextBlock>
+                        <TextBlock Tag="Verdana">Verdana</TextBlock>
+                    </ComboBox>
+                    <ComboBox x:Name="fontSizeSelection" Style="{DynamicResource ComboBoxStyle}" SelectedIndex="2" Width="50">
+                        <TextBlock Tag="12">12</TextBlock>
+                        <TextBlock Tag="14">14</TextBlock>
+                        <TextBlock Tag="16">16</TextBlock>
+                    </ComboBox>
                 </ToolBar>
                 <ToolBar Style="{DynamicResource ToolBarStyle}">
                     <Button>
@@ -58,7 +70,7 @@
                     <ComboBox x:Name="styleBox" Style="{DynamicResource ComboBoxStyle}" Width="100"/>
                 </ToolBar>
             </ToolBarTray>
-            <TextBox x:Name="textBox" Grid.Row="1" Style="{DynamicResource TextBlockStyle}" FontSize="16" FontFamily="Arial" TextWrapping="Wrap" BorderThickness="0" />
+            <TextBox x:Name="textBox" Grid.Row="1" Style="{DynamicResource TextBlockStyle}" FontSize="{Binding ElementName=fontSizeSelection, Path = SelectedItem.Tag}" FontFamily="{Binding ElementName=fontTypeSelection, Path = SelectedItem.Tag}" TextWrapping="Wrap" BorderThickness="0" />
         </Grid>
     </DockPanel>
 

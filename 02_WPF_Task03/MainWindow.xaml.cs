@@ -61,6 +61,7 @@ namespace _02_WPF_Task03
             }
         }
 
+        /* Замена шрифта и размера через события
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string fontName = (sender as ComboBox).SelectedItem as string;
@@ -79,6 +80,8 @@ namespace _02_WPF_Task03
                 textBox.FontSize = double.Parse(fontSize);
             }
         }
+
+        */
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
