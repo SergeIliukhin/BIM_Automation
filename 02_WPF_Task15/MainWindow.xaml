@@ -1,0 +1,170 @@
+﻿<Window x:Class="_02_WPF_Task15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_WPF_Task15"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1200" Width="800">
+    <Grid>
+        <FlowDocumentScrollViewer>
+            <FlowDocument>
+                <Paragraph TextAlignment="Center" FontWeight="Bold" FontSize="20" >
+                    ОЧИСТКА ВОДЫ ОТ ПЕСКА В СКВАЖИНЕ
+                </Paragraph>
+                <Paragraph>
+                    <Floater Width="250" HorizontalAlignment="Right">
+                        <BlockUIContainer>
+                            <Image Source="Data/Well.jpg"/>
+                        </BlockUIContainer>
+                    </Floater>
+                </Paragraph>
+                <Paragraph Foreground="#FF1153B2" FontStyle="Italic" TextIndent="30">
+                    Ошибочно полагать, что вода из скважин всегда чистая и полезная. Такую воду необходимо подвергать тщательной очистке, так как в ней могут
+                    содержаться болезнетворные бактерии и даже токсические вещества.
+                    Очистка воды из скважины также предполагает удаление крупных механических примесей, таких как ржавчина, песок и других. Разнообразие
+                    различных загрязнителей порождает не меньшее разнообразие способов
+                    очистки воды от них. Данный материал посвящен способам очистки воды от песка.
+                </Paragraph>
+                <Paragraph TextIndent="30">
+                    Согласно СанПиН 2.1.4.1074–01 «Питьевая
+                    вода. Гигиенические требования к качеству воды
+                    централизованных систем питьевого водоснабжения. Контроль качества. Гигиенические требования к обеспечению безопасности систем
+                    горячего водоснабжения» в воде для бытовых
+                    нужд, поступающей в дом из скважины, допустимо содержание песка и прочих взвешенных
+                    частиц до 1 г/л. Превышение нормы опасно не
+                    только для здоровья человека, но и для локальной системы водоснабжения, поскольку присутствие абразивных примесей влечет за собой преждевременный износ насосного оборудования
+                    и других элементов системы. В таких случаях
+                    требуется срочная очистка источника. Повышение концентрации песка в воде проявляется
+                    следующим образом:
+                </Paragraph>
+                <List MarkerStyle="Circle">
+                    <ListItem>
+                        <Paragraph Padding="0,2,0,2">
+                            напор воды, поступающей из скважины или
+                            колодца, снижается;
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Padding="0,2,0,2">
+                            вода из крана перестает течь свободно
+                            и выбрасывается рывками, вперемешку с воздухом, сильно разбрызгиваясь;
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph Padding="0,2,0,2">
+                            на дно емкостей, в которые наливается вода,
+                            оседает песок или ил.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph FontWeight="Bold" FontSize="18" TextAlignment="Center">
+                    Основные причины засорения скважины песком
+                </Paragraph>
+                <Paragraph TextIndent="30">
+                    <Run FontWeight="Bold" FontStyle="Italic">Нерегулярный забор воды.</Run> Если скважина
+                    эксплуатируется с большими перерывами, на ее
+                    дне успевает скопиться песок или ил, который засоряет фильтр и проникает в трубу подачи воды. Такая
+                    проблема наиболее характерна для дач, проживание в которых ограничено теплым временем года.
+                </Paragraph>
+                <Paragraph TextIndent="30">
+                    <Run FontWeight="Bold" FontStyle="Italic">Проникновение загрязнений из внешней
+                    среды.</Run> Источник воды может засориться и при
+                    постоянном водозаборе, если на дно попадает грунт
+                    и песок вследствие разрушения стенок или случайного замусоривания.
+                </Paragraph>
+                <Paragraph TextIndent="30">
+                    <Run FontWeight="Bold" FontStyle="Italic">Геологические изменения.</Run> Одна из причин
+                    повышения концентрации взвешенных частиц
+                    в скважине – подвижки грунта на территории
+                    участка из-за геологических процессов или при
+                    изменении уровня залегания грунтовых вод.
+                </Paragraph>
+                <Paragraph FontWeight="Bold" FontSize="18" TextAlignment="Center">
+                    Способы очистки скважины от песка
+                </Paragraph>
+                <Table>
+                    <Table.Columns>
+                        <TableColumn Width="0.3*"/>
+                        <TableColumn Width="*"/>
+                        <TableColumn Width="2*"/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph FontWeight="Bold" TextAlignment="Center">
+                                    № п/п
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph FontWeight="Bold" TextAlignment="Center">
+                                    Название способа
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph FontWeight="Bold" TextAlignment="Center">
+                                    Описание
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5" TextAlignment="Center">
+                                    1.
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5" TextAlignment="Center">
+                                    Прокачка воды
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5">
+                                    Если скважина обустроена правильно, а вид и мощность насосного оборудования
+                                    подобраны грамотно, трубы очистятся от попавшего
+                                    в них песка за счет большого объема жидкости, прокачанной под сильным напором.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5" TextAlignment="Center">
+                                    2.
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5" TextAlignment="Center">
+                                    Промывка скважины
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5">
+                                    С этой целью применяется специальная установка, подающая воду под
+                                    давлением по колонне труб, опущенной в скважину.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5" TextAlignment="Center">
+                                    3.
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5" TextAlignment="Center">
+                                    Продувка скважины
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph Padding="0,5,0,5">
+                                    Данный метод очистки воды от песка в скважине является альтернативой промывке.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+
+    </Grid>
+</Window>
