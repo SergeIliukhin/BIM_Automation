@@ -1,0 +1,43 @@
+﻿<Window x:Class="_02_WPF_Task16_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_WPF_Task16_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400">
+    <Canvas>
+
+
+        <Ellipse Fill="#FF1F1FFD" Width="50" Height="50" Canvas.Left="175" Canvas.Top="275" Stroke="Black" >
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames
+                                Storyboard.TargetProperty="(Canvas.Top)"
+                                Duration="0:0:2"
+                                RepeatBehavior="Forever">
+                                <LinearDoubleKeyFrame KeyTime="0%" Value="275"/>
+                                <LinearDoubleKeyFrame KeyTime="65%" Value="50"/>
+                                <LinearDoubleKeyFrame KeyTime="99%" Value="275"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                Duration="0:0:2"
+                                RepeatBehavior="Forever">
+                                <LinearDoubleKeyFrame KeyTime="0%" Value="175"/>
+                                <LinearDoubleKeyFrame KeyTime="65%" Value="175"/>
+                                <LinearDoubleKeyFrame KeyTime="99%" Value="175"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+    </Canvas>
+</Window>
