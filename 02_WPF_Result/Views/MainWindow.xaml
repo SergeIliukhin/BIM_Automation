@@ -1,0 +1,52 @@
+﻿<Window x:Class="_02_WPF_Result.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_WPF_Result"
+        xmlns:vm="clr-namespace:_02_WPF_Result.ViewModels"
+        mc:Ignorable="d"
+       Title="MainWindow" Height="500" Width="400">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FFDFFFF6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" Margin="5" Padding="0" Text="{Binding Path=InputTextBox}" FontSize="30" HorizontalAlignment="Right" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="#FFDFFFF6"/>
+            <TextBox Grid.Row="1" Margin="5" Padding="0" Text="{Binding Path=ResultTextBox}" FontSize="56" HorizontalAlignment="Right" VerticalAlignment="Center" BorderBrush="{x:Null}" Background="#FFDFFFF6" FontWeight="Bold"/>
+        </Grid>
+        <UniformGrid Grid.Row ="1" Rows="5" Columns ="4">
+            <Button BorderThickness="1" Content="CE" CommandParameter="CE" FontSize="28" Background="#FFDADADA" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="C" CommandParameter="C" FontSize="28" Background="#FFDADADA" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="←" CommandParameter="←" FontSize="28" Background="#FFDADADA" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="÷" CommandParameter="÷" FontSize="28" Background="#FFDADADA" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="7" CommandParameter="7" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="8" CommandParameter="8" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="9" CommandParameter="9" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="×" CommandParameter="×" FontSize="28" Background="#FFDADADA" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="4" CommandParameter="4" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="5" CommandParameter="5" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="6" CommandParameter="6" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="-" CommandParameter="-" FontSize="28" Background="#FFDADADA" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="1" CommandParameter="1" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="2" CommandParameter="2" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="3" CommandParameter="3" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="+" CommandParameter="+" FontSize="28" Background="#FFDADADA" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="±" CommandParameter="±" FontSize="28" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="0" CommandParameter="0" FontSize="28" FontWeight="Bold" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="," CommandParameter="," FontSize="28" Background="#FFF1F1F1" Command="{Binding Path=AddCommand}"></Button>
+            <Button BorderThickness="1" Content="=" CommandParameter="=" FontSize="28" Background="#FF7EB7E4" Command="{Binding Path=AddCommand}"></Button>
+        </UniformGrid>
+    </Grid>
+
+
+
+</Window>
